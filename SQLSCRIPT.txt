@@ -1,0 +1,35 @@
+1. clonar repo
+2. ir a la consola ruta y clonar
+3. add remote
+4. git remote
+5. comienza trabajo
+6. crear 3 archivos
+7. git push 3
+
+git push jairoarango master
+
+
+
+CREATE USER ARGA10
+IDENTIFIED BY 123456
+
+--1        
+CREATE TABLESPACE COURSES DATAFILE 'JAIROARANGO.dbf' SIZE 50M
+    EXTENT MANAGEMENT LOCAL 
+    SEGMENT SPACE MANAGEMENT AUTO;
+    
+--2
+CREATE PROFILE administrativo LIMIT
+  SESSIONS_PER_USER 1
+  CPU_PER_SESSION UNLIMITED
+  CPU_PER_CALL  UNLIMITED
+  CONNECT_TIME  240
+  IDLE_TIME 25
+  FAILED_LOGIN_ATTEMPTS 4
+
+--3  
+CREATE USER ARGA10
+IDENTIFIED BY ARGA10
+QUOTA 30M ON COURSES
+PROFILE administrativo
+  
